@@ -1,0 +1,29 @@
+@model List<Boek>
+
+@{
+
+Layout = "";
+}
+
+<table style="border: 1px solid black;">
+    <tr>
+         <th>ISBN</th>
+         <th>Titel</th>
+         <th>Genre</th>
+         <th>Auteur</th>
+    </tr>
+
+    @foreach (var boek2 in Model){
+        <tr>
+
+            <td style="border: 1px solid black;">@boek2.ISBN</td>
+            <td style="border: 1px solid black;">@boek2.Titel</td>
+            <td style="border: 1px solid black;">@boek2.Genre</td>
+            <td style="border: 1px solid black;">@boek2.Auteur</td>
+        </tr>
+    }
+</table>
+
+<form action="/boek/create" method="get">
+<input type="submit">
+</form>

@@ -1,0 +1,22 @@
+@model Boek
+
+@{
+Layout = "";
+var yo = Boek.Boeken;
+}
+
+@if(@Model == null){
+    <p>Je hebt geen isbn op gegeven. Geef ISBN op:</p>
+    <form action="/boek/genre">
+        <select id="isbn">
+            @foreach(var boek2 in yo){
+            <option name ="isbn" value="@boek2.ISBN">@boek2.ISBN</option>
+            }
+        </select>
+  <input type="submit">
+</form>
+
+}else{
+    <p>Het boek @Model.Titel is Genre:  @Model.Genre</p>
+}
+
