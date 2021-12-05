@@ -1,0 +1,16 @@
+@model Boek
+
+@{
+Layout = "";
+var yo = Boek.Boeken;
+}
+
+<p>Kies een boek om te verwijderen:</p>
+<form action="/boek/delete" method="post">
+    <select id="ISBN" name="ISBN">
+        @foreach(var boek2 in yo){
+        <option name ="ISBN" value="@boek2.ISBN">@boek2.ISBN</option>
+        }
+    </select>
+  <input type="submit">
+</form>

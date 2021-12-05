@@ -1,0 +1,17 @@
+@model Boek
+
+@{
+Layout = "";
+}
+
+<form action="/boek/update" method="post">
+  <label for="ISBN">ISBN:</label><br>
+  <input type="text" id="ISBN" name="ISBN" value="@Model.ISBN" readonly><br>
+  <label for="Auteur">Auteur</label><br>
+  <input type="text" id="Auteur" name="Auteur" value="@Model.Auteur"><br>
+  <label for="Titel">Titel</label><br>
+  <input type="text" id="Titel" name="Titel" value="@Model.Titel"><br>
+  <label for="Genre">Genre</label><br>
+  <input type="text" id="Genre" name="Genre" value="@Model.Genre"><br>
+  <input type="submit" value="Submit">
+</form> 

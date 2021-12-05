@@ -7,17 +7,13 @@ public class Boek
     public string Auteur { get; set; }
     public string Titel { get; set; }
     public string Genre { get; set; }
+    
     public Boek(string isbn, string auteur, string titel, string genre)
     {
         ISBN = isbn;
         Auteur = auteur;
         Titel = titel;
         Genre = genre;
-    }
-
-    public static void create(string ISBN, string Titel, string Genre, string Auteur){
-        Boeken.Append(new Boek("999999999999", "W99999999ó", "D99999sie", "act78978879897e"));
-
     }
 
     public static IEnumerable<Boek> Boeken { get; set; } = new List<Boek>() {

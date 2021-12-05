@@ -7,7 +7,16 @@ using WPFW6._1.Models;
 
 public class BoekController : Controller{
 
+// public static List<Boek> boekenLijst = new List<Boek>();
+
+    public static List<Boek> Boekelijst(){
+        List<Boek> boeken3 = Boek.Boeken.ToList();
+        return boeken3;
+    }
+
+
     public ViewResult Index(){
+
         return View(Boek.Boeken);
     }    
      
@@ -18,7 +27,6 @@ public class BoekController : Controller{
     } 
     public IActionResult genre(string id){
         Boek boek = Boek.Boeken.Where(boek=>boek.ISBN == id).SingleOrDefault();
-        var yo = Boek.Boeken;
         return View(boek);
     }
 
@@ -37,14 +45,51 @@ public class BoekController : Controller{
 
     [HttpPost]
     public IActionResult create(String ISBN, String Auteur, String Titel, String Genre){
-        Boek.create(ISBN, Titel, Genre, Auteur);
-        System.Console.WriteLine(ISBN+Auteur+Titel+Genre);
-        Boek.Boeken.Append(new Boek("999999999999", "W99999999ó", "D99999sie", "act78978879897e"));
+        List<Boek> nieuweLijst = Boekelijst();
+        nieuweLijst.Add(new Boek(ISBN, Auteur, Titel, Genre));
 
-        
-
-        return View(Boek.Boeken);
+        Boek.Boeken = nieuweLijst;
+        return Redirect("index");
     }
+
+    [HttpGet]
+    public IActionResult delete(){
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult delete(String ISBN){
+        List<Boek> nieuweLijst = Boekelijst();
+
+        Boek boek6 = nieuweLijst.Where(boek=>boek.ISBN == ISBN).SingleOrDefault();
+  
+        nieuweLijst.Remove(boek6);
+
+        Boek.Boeken = nieuweLijst;
+
+        return Redirect("index");
+    }
+
+
+    [HttpGet]
+    public IActionResult update(String ISBN){
+        Boek boek6 = Boekelijst().Where(boek=>boek.ISBN == ISBN).SingleOrDefault();
+        return View(boek6);
+    }
+
+    [HttpPost]
+    public IActionResult update(String ISBN, String Auteur, String Titel, String Genre){
+
+        Boek boek6 = Boekelijst().Where(boek=>boek.ISBN == ISBN).SingleOrDefault();
+        boek6.ISBN = ISBN;
+        boek6.Auteur = Auteur;
+        boek6.Titel = Titel;
+        boek6.Genre = Genre;
+        
+        return Redirect("index");
+    }
+
+
    
 }
 

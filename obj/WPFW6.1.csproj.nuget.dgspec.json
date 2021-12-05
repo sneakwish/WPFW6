@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wisha\\Documents\\VSCodeShit\\WPFW6.1\\WPFW6.1.csproj": {}
+    "C:\\Users\\wisha\\Documents\\VSCodeShit\\WPFW6\\WPFW6.1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wisha\\Documents\\VSCodeShit\\WPFW6.1\\WPFW6.1.csproj": {
+    "C:\\Users\\wisha\\Documents\\VSCodeShit\\WPFW6\\WPFW6.1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wisha\\Documents\\VSCodeShit\\WPFW6.1\\WPFW6.1.csproj",
+        "projectUniqueName": "C:\\Users\\wisha\\Documents\\VSCodeShit\\WPFW6\\WPFW6.1.csproj",
         "projectName": "WPFW6.1",
-        "projectPath": "C:\\Users\\wisha\\Documents\\VSCodeShit\\WPFW6.1\\WPFW6.1.csproj",
+        "projectPath": "C:\\Users\\wisha\\Documents\\VSCodeShit\\WPFW6\\WPFW6.1.csproj",
         "packagesPath": "C:\\Users\\wisha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wisha\\Documents\\VSCodeShit\\WPFW6.1\\obj\\",
+        "outputPath": "C:\\Users\\wisha\\Documents\\VSCodeShit\\WPFW6\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\wisha\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -13,7 +13,7 @@ Layout = "";
          <th>Auteur</th>
     </tr>
 
-    @foreach (var boek2 in Model){
+    @foreach (var boek2 in @Model){
         <tr>
 
             <td style="border: 1px solid black;">@boek2.ISBN</td>
@@ -25,5 +25,18 @@ Layout = "";
 </table>
 
 <form action="/boek/create" method="get">
-<input type="submit">
+<input type="submit" value="Create">
+</form>
+
+<form action="/boek/delete" method="get">
+<input type="submit" value="Delete">
+</form>
+
+<form action="/boek/update" method="get">
+    <select id="ISBN" name="ISBN">
+        @foreach(var boek2 in @Model){
+        <option name ="ISBN" value="@boek2.ISBN">@boek2.ISBN</option>
+        }
+    </select>
+<input type="submit" value="Update">
 </form>
